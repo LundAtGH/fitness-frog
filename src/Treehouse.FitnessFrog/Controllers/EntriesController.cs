@@ -52,10 +52,14 @@ namespace Treehouse.FitnessFrog.Controllers
             return View(entry);
         }
 
+        //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
+
         [HttpPost]
         public ActionResult Add(Entry entry)
         {
-        /// Looking for validation errors:
+        //  ModelState.AddModelError("", "This is a global message...");
+
+        //  Looking for validation errors:
             if (ModelState.IsValidField("Duration") && entry.Duration <= 0)
             {
                 ModelState.AddModelError("Duration", "The duration must be greater than 0.");
@@ -73,6 +77,8 @@ namespace Treehouse.FitnessFrog.Controllers
 
             return View(entry);
         }
+
+        //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
 
         public ActionResult Edit(int? id)
         {
